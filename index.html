@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Weather</title>
+</head>
+<body>
+    <div id="wrapper" class="sunny">
+        <img id="weather-condition" src="assets/cloud-rain-solid.svg" alt="" width="50px">
+        <p id="date">Wednesday, February 3</p>
+        <h1 id="temperature">19*C</h1>
+        <p id="city">Chicago</p>
+        <div class="detail-wrapper">
+            <div class="detail">
+                <img src="assets/cloud-solid.svg" alt="" width="30px" height="30px">
+                <p id="cloud">10%</p>
+            </div>
+            <div class="detail">
+                <img src="assets/droplet-solid.svg" alt="" width="30px" height="30px">
+                <p id="humidity">70%</p>
+            </div>
+            <div class="detail">
+                <img src="assets/wind-solid.svg" alt="" width="30px" height="30px">
+                <p id="wind">14kmh</p>
+            </div>
+        </div>
+        <div class="input-wrapper">
+            <form action="#">
+                <input type="text" placeholder="Search City">
+                <div id="search-btn"><img src="assets/arrow-right-solid.svg" alt="" width="75%"></div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
