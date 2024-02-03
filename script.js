@@ -39,6 +39,10 @@ async function fetchWeather( city ){
     try {
         const response = await fetch(`
         http://api.weatherapi.com/v1/current.json?key=0fa30492f55a4b099fb115124243101&q=${city}&aqi=no`);
+        if(response.status === 400){
+            throwError();
+            return;
+        }
         const data = await response.json();
         return data;
     } catch (error) {
@@ -90,4 +94,7 @@ const changeBackground = (condition) => {
     const background = document.querySelector('#wrapper');
     background.classList.remove(...background.classList);
     background.classList.add(condition);
+}
+function throwError(){
+    alert('No matching place');
 }
