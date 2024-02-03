@@ -38,13 +38,17 @@ getData('India');
 async function fetchWeather( city ){
     try {
         const response = await fetch(`
-        http://api.weatherapi.com/v1/current.json?key=0fa30492f55a4b099fb115124243101&q=${city}&aqi=no`);
+        http://api.weatherapi.com/v1/current.json?key=0fa30492f55a4b099fb115124243101&q=${city}&aqi=no`,
+        {
+            mode: 'cors',
+          }
+        );
         if(response.status === 400){
             throwError();
-            return;
+        } else {
+            const data = await response.json();
+            return data;
         }
-        const data = await response.json();
-        return data;
     } catch (error) {
         console.log(error);
     }
